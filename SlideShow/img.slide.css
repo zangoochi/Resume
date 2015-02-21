@@ -1,0 +1,82 @@
+img.slide 
+{ 
+  padding: 7px;
+  border: 10px solid;
+  border-radius: 25%;
+
+}
+img.tiles
+{ 
+  background-color: #060; 
+  margin: 3px;
+  border: 3px solid;
+}
+
+img.tiles:hover
+{
+background-color:black;
+padding:3px;
+}
+
+img.selected
+{
+	border:3px solid;
+	border-color: yellow;
+}
+
+table td#tiles
+{
+	text-align: center;
+  border:5px solid;
+  border-radius: 25px;
+	padding:5px;
+}
+
+
+img.arrows 
+{
+  height:50px; 
+  width:50px;
+}
+
+figcaption{
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+}
+
+.tooltip
+{
+  position:relative;
+  padding:5px;
+  border:2px solid;
+  background-color:#def;
+  height:18px;
+  border-radius: 20px;
+  margin: 5px;
+  z-index: 99;
+}
+figcaption.tooltip:before
+{
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 45%;
+  bottom: 30px;
+  border: 8px solid;
+  border-color: transparent transparent black transparent;
+}
+
+#tooltip-container
+{
+  display: inline-block;
+  text-align: center;
+  margin:auto;
+  background-color: lightblue;
+}
+
+
+
+
+
