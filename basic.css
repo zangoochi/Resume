@@ -4,7 +4,8 @@ html
   width:100%;
 }
 body 
-{ background-color: #def; 
+{ 
+  background-color: #def; 
   line-height: 140%;
   height:100%;
 }
@@ -25,19 +26,26 @@ section#main
 
 nav.leftnavbar
 {  display: table-cell;
+   vertical-align: top;
    background-color: #1d6ca5;
    color: white;
    font-family: Arial, Helvetica, sans-serif;
    font-weight: bold;
-   width: 7%;
-   text-align: left;
+   width: 12%;
    padding-right: 1em;
    padding-left: 0.5em;
    white-space: nowrap;
 }
+span#label{
+  text-align: left;
+}
+a#link{
+  text-align: right;
+}
 
 nav.leftnavbar > span.self
 {  display: block;
+   text-align: right;
    color: orange;
    border: thin solid transparent;
    margin-top: 1.5em;
@@ -66,7 +74,8 @@ nav.leftnavbar > a:hover
 
 section#main > article#content
 {  display: table-cell;
-   width: 60%;
+   vertical-align: top;
+   width: 100%;
    background-color: white;
    padding: 2em;
 }

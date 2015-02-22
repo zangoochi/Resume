@@ -5,15 +5,14 @@ var pic = [
 			"EmpLogPictures/1.png", 
 			"EmpLogPictures/2.png",
      		"EmpLogPictures/3.png",
-			"EmpLogPictures/adminCreateRecord.png",
-			"EmpLogPictures/adminEdit.png",
+     		"EmpLogPictures/pass.png",
+     		"EmpLogPictures/adminNew.png",
+     		"EmpLogPictures/adminGet.png",
+     		"EmpLogPictures/adminEdit.png",
+     		"EmpLogPictures/adminRecord.png",
 			"EmpLogPictures/adminEditRecord.png",
-			"EmpLogPictures/adminGet.png",
-			"EmpLogPictures/adminNew.png",
-			"EmpLogPictures/adminRecord.png",
-			"EmpLogPictures/pass.png",
-
-
+			"EmpLogPictures/adminCreateRecord.png",
+			"EmpLogPictures/video.jpg",
      		];
 
 
@@ -21,17 +20,16 @@ var pic = [
 //PRE: Indexes must match the index of the picture in pic
 var captions = [
 				"EmpLog Main Screen", 
-				"1905 Rolls Royce", 
-				"1937 Bugatti 57S", 
-				"1937 Horch 853 Voll & Ruhrbech Sport Cabriolet", 
-				"1931 Packard 883 Sport Phaeton", 
-				"1948 Aston Martin DB1", 
-				"1954 Oldsmobile F-88", 
-				"1954 Jaguar D-Type", 
-				"1957 Ferrari 250 Testa Rossa", 
-				"1972 Porshe 916", 
-				"1962 Ferrari 250 GTO", 
-				"1948 Tucker Sedan"
+				"Employee Lookup for attendance", 
+				"Clocking in and out", 
+				"Accessing admin screen", 
+				"New employee form", 
+				"Access form to edit an employee", 
+				"Edit employee form", 
+				"Employee record history", 
+				"Editing employee history record", 
+				"Creating employee record", 
+				"EmpLog Video",
 				];
 
 //Slide of all the pictures
@@ -77,9 +75,16 @@ if ( document.images ){
    }
 }
 
+//Hide video object
+var obj = document.getElementById("displayVideo");
+obj.setAttribute("hidden", "");
+obj.setAttribute("width", picture_width);
+obj.setAttribute("height",picture_height);
+
+
 //preloading all styles such as background color and icons
 check_next(index);
-document.getElementById("display").src= slide[Math.floor((Math.random() * pic.length-1) + 1)].src; 
+document.getElementById("display").src= slide[index].src; 
 document.getElementById("display").width = picture_width;
 document.getElementById("display").height = picture_height;
 document.getElementById('display').style.background = default_background_color;
@@ -166,16 +171,30 @@ function check_previous(start)
 
 function reply_click(value)
 {
-	var i = pic.indexOf(value);
-	var display = document.getElementById("display");
-	display.src= slide[i].src; 
-	display.width = picture_width;
-	display.height = picture_height;	
-	toggle_selected(value);
+	if(value != "EmpLogPictures/video.jpg"){
+		var img = document.getElementById('displayVideo').setAttribute('hidden', '');
+		var vid = document.getElementById('display').removeAttribute("hidden");
 
-	var capt = document.getElementById('caption');
-	capt.className = "tooltip";
-	capt.innerHTML = captions[i];
+		var i = pic.indexOf(value);
+		var display = document.getElementById("display");
+		display.src= slide[i].src; 
+		display.width = picture_width;
+		display.height = picture_height;	
+		toggle_selected(value);
+
+		var capt = document.getElementById('caption');
+		capt.className = "tooltip";
+		capt.innerHTML = captions[i];
+	}else{
+		var img = document.getElementById('display').setAttribute('hidden', '');
+		var vid = document.getElementById('displayVideo').removeAttribute("hidden");
+		var i = pic.indexOf(value);
+
+		toggle_selected(value);
+		var capt = document.getElementById('caption');
+		capt.className = "tooltip";
+		capt.innerHTML = captions[i];
+	}
 
 }
 
@@ -218,27 +237,6 @@ function toggle_selected(value)
 //============================================================================================================
 
 //===Document Modification Areas==============================================================================
-
-
-function set_background()
-{
-	var color = document.getElementById('background').value;
-	document.getElementById('display').style.background = color;
-	document.getElementById('tiles').style.background = color;
-}
-
-function set_back()
-{
-	var button = document.getElementById('back').value;
-	document.getElementById('back_btn').src = button;
-}
-
-function set_forward()
-{
-	var button = document.getElementById('forward').value;
-	document.getElementById('forward_btn').src = button;
-}
-
 
 function set_tile_size()
 {
