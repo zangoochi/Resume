@@ -2,7 +2,7 @@
 $realm="Zachary Montgomery";
 
 
-      $title="Login Failed"; 
+      $title="Zach Montgomery"; 
       $css=array("basic.css", "form.css");
       require("rfront.php");
       require_once("about.php");
